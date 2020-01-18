@@ -1,0 +1,11 @@
+<h1>Home</h1>
+
+<p>
+  <%= link_to("Twitter に連携する", oauth_twitter_path) %>
+</p>
+
+<% if authorized? %>
+  <p>
+    <%= link_to("タイムラインを表示する", twitter_home_timeline_path) %>
+  </p>
+<% end %>

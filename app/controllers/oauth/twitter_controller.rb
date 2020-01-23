@@ -3,10 +3,8 @@ module Oauth
     TWITTER_API_KEY    = ENV['TWITTER_API_KEY']
     TWITTER_API_SECRET = ENV['TWITTER_API_SECRET']
 
-    ACCESS_TOKEN        = ENV['TWITTER_ACCESS_TOKEN']
-    ACCESS_TOKEN_SECRET = ENV['TWITTER_ACCESS_TOKEN_SECRET']
-
-    TWITTER_CALLBACK = 'http://127.0.0.1:3000/oauth/twitter/access_token'
+    TWITTER_CALLBACK =
+      "#{ENV['CALLBACK_URI_SCHEME']}://#{ENV['CALLBACK_URI_HOST']}/oauth/twitter/access_token"
 
     def authorize
       request_token = oauth_client.get_request_token(oauth_callback: TWITTER_CALLBACK)

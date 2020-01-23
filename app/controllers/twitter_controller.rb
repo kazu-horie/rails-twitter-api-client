@@ -2,9 +2,6 @@ class TwitterController < ApplicationController
   TWITTER_API_KEY    = ENV['TWITTER_API_KEY']
   TWITTER_API_SECRET = ENV['TWITTER_API_SECRET']
 
-  ACCESS_TOKEN        = ENV['TWITTER_ACCESS_TOKEN']
-  ACCESS_TOKEN_SECRET = ENV['TWITTER_ACCESS_TOKEN_SECRET']
-
   def home_timeline
     consumer = OAuth::Consumer.new(
       TWITTER_API_KEY,
